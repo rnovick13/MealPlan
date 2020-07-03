@@ -1,0 +1,56 @@
+<h1>Create New Meal Plan</h1>
+<%= form_for(@mealplan) do |f|%><br>
+
+<%=f.label "Enter Meal Plan Name"%>
+<%=f.text_field :name%><br><br>
+
+
+<%=f.label "Monday"%><br><br>
+<%=f.label "Breakfast"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Lunch"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Dinner"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%><br><br>
+
+
+<%=f.label "Tuesday"%><br><br>
+<%=f.label "Breakfast"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Lunch"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Dinner"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%><br><br>
+
+
+<%=f.label "Wednesday"%><br><br>
+<%=f.label "Breakfast"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Lunch"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Dinner"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%><br><br>
+
+
+<%=f.label "Thursday"%><br><br>
+<%=f.label "Breakfast"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Lunch"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Dinner"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%><br><br>
+
+
+<%=f.label "Friday"%><br><br>
+<%=f.label "Breakfast"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Lunch"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%>
+<%=f.label "Dinner"%>
+<%=f.collection_select(:id, Meal.all, :id, :name)%><br><br>
+
+
+<%=f.submit "Create Meal Plan" %>
+<%end%>
+
+<%= link_to 'Back', :back %>

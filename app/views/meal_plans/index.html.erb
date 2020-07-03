@@ -1,0 +1,8 @@
+<h1>Meal Plans</h1>
+<% MealPlan.all.each do |mp|%>
+<ul>
+  <li><%=link_to "#{mp.name.capitalize}", mp%></li>
+</ul>
+<% end %>
+
+<%= link_to 'Back', :back %>

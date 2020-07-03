@@ -1,0 +1,18 @@
+<h1><%=@mealplan.name.capitalize%></h1>
+<br>
+<h2>All Meals in This Plan:</h2>
+<ul>
+  <% MpMeal.all.each do |mpm| %>
+  <% if mpm.mp_id == @mealplan.id%>
+  <% Meal.all.each do |m| %>
+  <% if m.id == mpm.meal_id%>
+    <li><%=link_to "#{m.name.capitalize}", m %></li>
+  <% end %>
+  <%end %>
+  <%end %>
+  <%end %>
+</ul>
+
+<%= link_to 'Back', :back %>
+
+<!-- This should work in theory!!! -->

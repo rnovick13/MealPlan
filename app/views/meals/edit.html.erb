@@ -1,0 +1,38 @@
+<h1>Edit this Meal: </h1>
+
+<%=form_for @meal do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <br>
+  <br>
+  <ul>
+  <%= f.label "Safe For: " %>
+    <% MealRestriction.all.each do |mr| %>
+    <% if mr.meal_id == @meal.id %>
+    <% Restriction.all.each do |rest| %>
+    <% if rest.id == mr.restriction_id %>
+    <li><%= rest.name %></li>
+    <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </ul>
+
+  <%= f.label "Add: " %>
+  <br>
+  <%= f.collection_select(:id, Restriction.all, :id, :name, {:prompt => "Please choose as many that apply"}, {:multiple => true}) %>
+
+  <br>
+  <br>
+
+  <%= f.submit "Submit Changes"%>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'All Meals', meals_path %>
+<%= link_to 'All Restrictions', restrictions_path %>
+<%= link_to 'Back', :back %>

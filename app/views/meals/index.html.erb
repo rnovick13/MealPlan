@@ -1,0 +1,15 @@
+<ul>
+  <h1>Meals</h1>
+<% Meal.all.each do |meal|%>
+  <li><%=link_to "#{meal.name.capitalize}", meal_path(meal)%></li>
+<%end%>
+</ul>
+<%= link_to new_meal_path do %>New Meal<% end %>
+<br>
+
+<div class="nav_links">
+<%= link_to 'Home', root_path %>
+<%= link_to 'All Meals', meals_path %>
+<%= link_to 'All Restrictions', restrictions_path %>
+<%= link_to 'Back', :back %>
+</div>

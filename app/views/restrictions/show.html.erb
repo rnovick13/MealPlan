@@ -1,0 +1,20 @@
+<ul>
+  <h1><%=@restriction.name.capitalize%></h1>
+
+  <p><%= @restriction.description %></p>
+  <br>
+  <%MealRestriction.all.each do |mr|%>
+  <% if mr.restriction_id == @restriction.id %>
+  <% Meal.all.each do |m|%>
+  <% if m.id == mr.meal_id%>
+  <li><%= link_to "#{m.name.capitalize}", meal_path(m)%></li>
+  <%end %>
+  <%end %>
+  <%end %>
+  <%end %>
+</ul>
+<br>
+<%= link_to 'Home', root_path %>
+<%= link_to 'All Meals', meals_path %>
+<%= link_to 'All Restrictions', restrictions_path %>
+<%= link_to 'Back', :back %>

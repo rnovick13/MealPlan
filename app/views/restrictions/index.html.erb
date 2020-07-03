@@ -1,0 +1,14 @@
+<div class="jumbotron">
+
+<h1>Restrictions</h1>
+<% Restriction.all.each do |restriction|%>
+<ul>
+  <li><%=link_to "#{restriction.name.capitalize}", restriction_path(restriction)%></li>
+</ul>
+<%end%>
+<br>
+<%= link_to 'Home', root_path %>
+<%= link_to 'All Meals', meals_path %>
+<%= link_to 'All Restrictions', restrictions_path %>
+<%= link_to 'Back', :back %>
+</div>

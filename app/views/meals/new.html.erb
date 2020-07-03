@@ -1,0 +1,16 @@
+<h1>Create new meal</h1>
+<%= form_for(@meal) do |f|%>
+<h3><%=f.label :name%> </h3>
+<%=f.text_field :name%>
+<h3><%=f.label "Safe for the following food restrictions:"%><br></h3>
+<%= f.label "hold command to choose multiple" %><br>
+
+<%= f.collection_select(:id, Restriction.all, :id, :name, {:prompt => "Please choose as many that apply"}, {:multiple => true}) %><br>
+<br>
+<%=f.submit "Save meal" %><br>
+<% end%>
+<br>
+<%= link_to 'Home', root_path %>
+<%= link_to 'All Meals', meals_path %>
+<%= link_to 'All Restrictions', restrictions_path %>
+<%= link_to 'Back', :back %>
