@@ -15,3 +15,5 @@ rake db:create
 rake db:migrate
 
 rake db:seed
+
+Once the database has been properly migrated, run rails s to start the server
