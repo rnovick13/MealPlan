@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meal_id: MyString
+  integer: MyString
+  restriction_id: MyString
+  integer: MyString
+
+two:
+  meal_id: MyString
+  integer: MyString
+  restriction_id: MyString
+  integer: MyString
